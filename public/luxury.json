@@ -1,0 +1,111 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Luxury Villa with Ocean View",
+      "segment_name": "Luxury",
+      "description": "Stunning luxury villa with panoramic ocean views. Featuring modern architecture and lavish interiors.",
+      "price": "$5,000,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Malibu, California",
+      "facilities": ["infinity pool", "home theater", "gym", "sauna"],
+      "image": "https://i.ibb.co/P1WwG3Q/luxury-villas-ocean-view-with-private-pool-1448x814.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Luxury Penthouse in Manhattan",
+      "segment_name": "Luxury",
+      "description": "Exquisite penthouse located in the heart of Manhattan. Offers breathtaking city skyline views.",
+      "price": "$10,000/month",
+      "status": "rent",
+      "area": "3000 sq ft",
+      "location": "Manhattan, New York",
+      "facilities": ["rooftop terrace", "private elevator", "concierge service"],
+      "image": "https://i.ibb.co/nBvQw7N/18.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Luxury Beachfront Mansion",
+      "segment_name": "Luxury",
+      "description": "Magnificent beachfront mansion with direct access to the pristine sandy beach. Unmatched luxury and elegance.",
+      "price": "$12,000,000",
+      "status": "sale",
+      "area": "8000 sq ft",
+      "location": "Miami Beach, Florida",
+      "facilities": ["private beach access", "infinity pool", "home spa", "wine cellar"],
+      "image": "https://i.ibb.co/86WMb8x/luxury-beachfront-mansion.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Luxury Mountain Retreat",
+      "segment_name": "Luxury",
+      "description": "Spectacular mountain retreat nestled in the scenic countryside. Perfect for relaxation and outdoor activities.",
+      "price": "$3,500,000",
+      "status": "sale",
+      "area": "6000 sq ft",
+      "location": "Aspen, Colorado",
+      "facilities": ["outdoor jacuzzi", "ski-in/ski-out access", "home theater", "wine cellar"],
+      "image": "https://i.ibb.co/P97JNLn/luxury-mountain-retreat.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Luxury Lakeside Estate",
+      "segment_name": "Luxury",
+      "description": "Elegant lakeside estate offering unparalleled luxury living. Enjoy breathtaking lake views from every room.",
+      "price": "$7,500,000",
+      "status": "sale",
+      "area": "7000 sq ft",
+      "location": "Lake Tahoe, California",
+      "facilities": ["private dock", "infinity pool", "outdoor kitchen", "home gym"],
+      "image": "https://i.ibb.co/MDXZqHc/luxury-lakeside-estate.webp"
+    },
+    {
+      "id": 6,
+      "estate_title": "Luxury City Mansion",
+      "segment_name": "Luxury",
+      "description": "Opulent city mansion in a prestigious neighborhood. Features grand architecture and lavish interiors.",
+      "price": "$15,000,000",
+      "status": "sale",
+      "area": "10000 sq ft",
+      "location": "Beverly Hills, California",
+      "facilities": ["home theater", "infinity pool", "gym", "wine cellar"],
+      "image": "https://i.ibb.co/71nz6Qz/luxury-city-mansion.jpg"
+    },
+    {
+      "id": 7,
+      "estate_title": "Luxury Desert Oasis",
+      "segment_name": "Luxury",
+      "description": "Exquisite desert oasis offering tranquility and luxury. Surrounded by breathtaking desert landscapes.",
+      "price": "$6,500,000",
+      "status": "sale",
+      "area": "5500 sq ft",
+      "location": "Scottsdale, Arizona",
+      "facilities": ["infinity pool", "outdoor fireplace", "home spa", "guest casita"],
+      "image": "https://i.ibb.co/rfRqrXW/luxury-desert-oasis.jpg"
+    },
+    {
+      "id": 8,
+      "estate_title": "Luxury Countryside Estate",
+      "segment_name": "Luxury",
+      "description": "Luxurious countryside estate set amidst rolling hills and lush greenery. A peaceful retreat.",
+      "price": "$4,800,000",
+      "status": "sale",
+      "area": "7500 sq ft",
+      "location": "Carmel Valley, California",
+      "facilities": ["private vineyard", "infinity pool", "tennis court", "guest house"],
+      "image": "https://i.ibb.co/wY2w415/luxury-countryside-estate.jpg"
+    },
+    {
+      "id": 9,
+      "estate_title": "Luxury Island Paradise",
+      "segment_name": "Luxury",
+      "description": "Ultimate island paradise offering unparalleled luxury and privacy. Crystal-clear waters and white sandy beaches await.",
+      "price": "$20,000,000",
+      "status": "sale",
+      "area": "12000 sq ft",
+      "location": "Maui, Hawaii",
+      "facilities": ["private beach", "infinity pool", "outdoor kitchen", "home theater"],
+      "image": "https://i.ibb.co/6y8FrK7/luxury-island-paradise.jpg"
+    }
+  ]
+  
