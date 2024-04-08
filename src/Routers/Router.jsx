@@ -7,12 +7,14 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import UpdateProfile from "../Pages/UpdateProfile";
 import UserProfile from "../Pages/UserProfile";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Roots></Roots>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
