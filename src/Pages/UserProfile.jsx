@@ -1,6 +1,6 @@
 
 
-const ContactUs = () => {
+const UserProfile = () => {
     return (
         <div>
             <h1 className="text-3xl font-bold underline">
@@ -10,4 +10,4 @@ const ContactUs = () => {
     );
 };
 
-export default ContactUs;
+export default UserProfile;

@@ -3,10 +3,10 @@ import {
 } from "react-router-dom";
 import Roots from "../Root/Roots";
 import Home from "../Pages/Home";
-import Properties from "../Pages/Properties";
-import About from "../Pages/About";
-import Blogs from "../Pages/Blogs";
-import ContactUs from "../Pages/ContactUs";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import UpdateProfile from "../Pages/UpdateProfile";
+import UserProfile from "../Pages/UserProfile";
 
 
 const router = createBrowserRouter([
@@ -19,20 +19,20 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: "/properties",
-                element: <Properties></Properties>,
+                path: "/updateProfile",
+                element: <UpdateProfile></UpdateProfile>,
             },
             {
-                path: "/about",
-                element: <About></About>,
+                path: "/user",
+                element: <UserProfile></UserProfile>,
             },
             {
-                path: "/blogs",
-                element: <Blogs></Blogs>,
+                path: "/login",
+                element: <Login></Login>,
             },
             {
-                path: "/contact",
-                element: <ContactUs></ContactUs>,
+                path: "/register",
+                element: <Register></Register>,
             },
         ]
     },

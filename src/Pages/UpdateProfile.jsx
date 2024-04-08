@@ -1,6 +1,6 @@
 
 
-const Properties = () => {
+const UpdateProfile = () => {
     return (
         <div>
             <h1 className="text-3xl font-bold underline">
@@ -10,4 +10,4 @@ const Properties = () => {
     );
 };
 
-export default Properties;
+export default UpdateProfile;
