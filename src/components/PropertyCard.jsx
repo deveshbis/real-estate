@@ -2,23 +2,16 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const PropertyCard = ({ property }) => {
-    const { id, estate_title, description, image, price, area, facilities, location } = property;
+    const { id, estate_title, description, image, area, location } = property;
     return (
         <div className="card w-96 glass">
             <figure><img src={image} alt="car!" /></figure>
             <div className="card-body">
-                <p><span className='font-bold'>Price: </span> {price}</p>
                 <h2 className="card-title">{estate_title}</h2>
-                <p>{description}</p>
+                <p>{description.slice(0, 100)}</p>
                 <hr />
                 <p> <span className='font-bold'>Location: </span> {location}</p>
                 <hr />
-                <p>
-                    <span className='font-bold'>Facilities: </span>
-                    {facilities.map((facility, index) => (
-                        <span key={index} className="mr-2">{facility}</span>
-                    ))}
-                </p>
                 <hr />
                 <p><span className='font-bold'>Area: </span> {area}</p>
                 <hr />
@@ -32,6 +25,7 @@ const PropertyCard = ({ property }) => {
 
 PropertyCard.propTypes = {
     property: PropTypes.shape({
+        id: PropTypes.string.isRequired,
         estate_title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,

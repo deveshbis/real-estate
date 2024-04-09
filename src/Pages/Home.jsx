@@ -6,7 +6,7 @@ import PropertyCard from "../components/PropertyCard";
 const Home = () => {
 
     const property = useLoaderData()
-    // console.log(property);
+    
     return (
         <div>
             <div>
