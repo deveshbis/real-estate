@@ -9,3 +9,4 @@
 - **npm install -D tailwindcss**.
 - **npm i -D daisyui@latest**.
 - **npm install firebase**.
+- **npm i react-icons**.
