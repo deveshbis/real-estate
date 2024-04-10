@@ -3,7 +3,8 @@ import {FaGithub, FaGoogle} from 'react-icons/fa';
 
 
 const SocialLogin = () => {
-    const { googleLogin } = useAuth();
+    const { googleLogin, gitHubLogin } = useAuth();
+    
     return (
 
         <div className='p-5 space-y-3 mb-5'>
@@ -12,7 +13,7 @@ const SocialLogin = () => {
                 <FaGoogle></FaGoogle>
                 Google
             </button>
-            <button className="btn btn-outline w-full">
+            <button onClick={()=> gitHubLogin()} className="btn btn-outline w-full">
                 <FaGithub></FaGithub>
                 Github
             </button>

@@ -48,8 +48,8 @@ const Login = () => {
                                 </label>
                                 <input type="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
                                 {errors.password && <span className="text-red-500">This field is required</span>}
-                                <label className="label hover:underline">
-                                    <Link to='/register'>Register Now</Link>
+                                <label className="flex justify-between">
+                                    <Link to='/register'>Do not have an account?  <span className="label hover:underline">Register Now</span></Link>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
