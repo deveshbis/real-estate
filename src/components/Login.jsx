@@ -1,11 +1,13 @@
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
-import { AuthContext } from "../FirebaseProvider/FirebaseProvider";
+
 import { useForm } from "react-hook-form";
+import useAuth from "../Hooks/useAuth";
+import SocialLogin from "./SocialLogin";
 
 
 const Login = () => {
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser } = useAuth();
 
     const {
         register,
@@ -53,7 +55,9 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+                            
                         </form>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

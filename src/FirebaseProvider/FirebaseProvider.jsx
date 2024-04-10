@@ -1,38 +1,50 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
+import PropTypes from 'prop-types';
 
 export const AuthContext = createContext(null);
 
-const FirebaseProvider = ({ children }) => {
-    
+const googleProvider = new GoogleAuthProvider();
 
-    const [user, setUser] =useState(null);
+const FirebaseProvider = ({ children }) => {
+
+
+    const [user, setUser] = useState(null);
     console.log(user);
+
+
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const signInUser = (email, password) =>{
+    const signInUser = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    useEffect( ()=>{
+
+    const googleLogin = () => {
+        return signInWithPopup(auth, googleProvider)
+    }
+
+
+    useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-              setUser(user)
-              // ...
+                setUser(user)
+                // ...
             } else {
-              // User is signed out
-              // ...
+                // User is signed out
+                // ...
             }
-          });
+        });
     }, [])
- 
-    const allValue ={
+
+    const allValue = {
         createUser,
-        signInUser
+        signInUser, 
+        googleLogin
     };
 
     return (
@@ -42,6 +54,10 @@ const FirebaseProvider = ({ children }) => {
             }
         </AuthContext.Provider>
     );
+};
+
+FirebaseProvider.propTypes = {
+    children: PropTypes.node.isRequired,
 };
 
 export default FirebaseProvider;

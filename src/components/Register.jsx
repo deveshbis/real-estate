@@ -1,11 +1,11 @@
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
-import { AuthContext } from "../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
+import useAuth from "../Hooks/useAuth";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser } = useAuth();
 
     const {
         register,
