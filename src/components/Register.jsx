@@ -5,7 +5,7 @@ import useAuth from "../Hooks/useAuth";
 
 const Register = () => {
 
-    const { createUser } = useAuth();
+    const { createUser, updateUserProfile } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -18,13 +18,15 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        const {email, password} = data;
+        const { email, password, image, fullName } = data;
         createUser(email, password)
-        .then(result=>{
-            if(result.user){
-                navigate(from);
-            }
-        })
+            .then(() => {
+                updateUserProfile(fullName, image)
+                    .then(() => {
+                        navigate(from);
+                    })
+
+            })
     }
 
 
