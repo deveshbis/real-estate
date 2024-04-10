@@ -12,24 +12,28 @@ const FirebaseProvider = ({ children }) => {
 
 
     const [user, setUser] = useState(null);
-    console.log(user);
+    const [loading, setLoading] = useState(true);
 
 
 
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const signInUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
 
     const googleLogin = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     const gitHubLogin = () => {
+        setLoading(true)
         setUser(null);
         return signInWithPopup(auth, gitHubProvider)
     }
@@ -41,8 +45,9 @@ const FirebaseProvider = ({ children }) => {
 
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unSubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
+                setLoading(false)
                 setUser(user)
                 // ...
             } else {
@@ -50,6 +55,7 @@ const FirebaseProvider = ({ children }) => {
                 // ...
             }
         });
+        return () => unSubscribe();
     }, [])
 
     const allValue = {
@@ -58,7 +64,8 @@ const FirebaseProvider = ({ children }) => {
         googleLogin,
         gitHubLogin,
         logoutUser,
-        user
+        user,
+        loading
     };
 
     return (

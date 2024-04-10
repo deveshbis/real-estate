@@ -9,6 +9,7 @@ import UpdateProfile from "../Pages/UpdateProfile";
 import UserProfile from "../Pages/UserProfile";
 import ErrorPage from "../Pages/ErrorPage";
 import ViewProperty from "../Pages/ViewProperty";
+import PrivateDetailsRoute from "../components/PrivateDetailsRouter/PrivateDetailsRoute";
 
 
 
@@ -23,17 +24,15 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                // loader: async () => fetch(url),
                 loader:() => fetch('/luxury.json'),
             },
 
             {
                 path: "/property/:id",
-                // loader: ({params}) => fetch(`/luxury.json/${params.id}`),
                 loader:() => fetch('/luxury.json'),
-                element: <ViewProperty></ViewProperty>,
-                
-                // loader: ({ params }) => fetch(`/luxury.json/${params.id}`),
+                element: <PrivateDetailsRoute>
+                    <ViewProperty></ViewProperty>
+                </PrivateDetailsRoute>,
 
             },
             
