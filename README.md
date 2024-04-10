@@ -10,3 +10,4 @@
 - **npm i -D daisyui@latest**.
 - **npm install firebase**.
 - **npm i react-icons**.
+- **npm install react-hook-form**.
