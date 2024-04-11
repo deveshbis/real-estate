@@ -1,5 +1,5 @@
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 
@@ -7,9 +7,7 @@ const Register = () => {
 
     const { createUser, updateUserProfile } = useAuth();
     const navigate = useNavigate();
-    const location = useLocation();
-
-    const from = location?.state || '/';
+    const from = '/';
 
     const {
         register,
@@ -67,8 +65,8 @@ const Register = () => {
                                 </label>
                                 <input type="password" placeholder="Password" className="input input-bordered" {...register("password", { required: true })} />
                                 {errors.password && <span className="text-red-500">This field is required</span>}
-                                <label className="label hover:underline">
-                                    <Link to='/login'>Login Now</Link>
+                                <label >
+                                    <Link to='/login' className="flex justify-between items-center"> Have an Account? <span className="label hover:underline">Login Now</span></Link>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

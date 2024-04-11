@@ -38,8 +38,7 @@ const ViewProperty = () => {
                     </div>
                 </div>
                 <img src={property.image} alt="" className="w-full lg:h-[600px] mx-auto dark:bg-gray-500 rounded-lg shadow-md " />
-                <div>
-                    <h4 className="text-2xl font-bold mt-3 mb-2">Segment</h4>
+                <div className="mt-5">
                     <button className="btn btn-outline">{property.segment_name}</button>
                 </div>
                 <div>
