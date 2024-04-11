@@ -2,6 +2,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
@@ -19,17 +21,34 @@ const Register = () => {
         const { email, password, image, fullName } = data;
         createUser(email, password)
             .then(() => {
+                toast.success("Registration successful!");
+                
                 updateUserProfile(fullName, image)
                     .then(() => {
-                        navigate(from);
+                        toast.success("Registration successful!");
+                        navigate(from, { replace: true });
                     })
+            }).catch(error => {
+                toast.error(`Failed to register: ${error.message}`);
+            });
+    };
 
-            })
-    }
+    const passwordValidation = {
+        required: "Password is required",
+        minLength: {
+            value: 6,
+            message: "Password must have at least 6 characters"
+        },
+        validate: {
+            uppercase: v => /[A-Z]/.test(v) || "Password must include an uppercase letter",
+            lowercase: v => /[a-z]/.test(v) || "Password must include a lowercase letter",
+        }
+    };
 
 
     return (
         <div>
+            <ToastContainer />
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
@@ -63,8 +82,8 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="Password" className="input input-bordered" {...register("password", { required: true })} />
-                                {errors.password && <span className="text-red-500">This field is required</span>}
+                                <input type="password" placeholder="Password" className="input input-bordered" {...register("password", passwordValidation)} />
+                                {errors.password && <span className="text-red-500">{errors.password.message}</span>}
                                 <label >
                                     <Link to='/login' className="flex justify-between items-center"> Have an Account? <span className="label hover:underline">Login Now</span></Link>
                                 </label>
