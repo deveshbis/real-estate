@@ -11,3 +11,5 @@
 - **npm install firebase**.
 - **npm i react-icons**.
 - **npm install react-hook-form**.
+- **npm install react-toastify**
+
