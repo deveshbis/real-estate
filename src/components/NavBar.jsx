@@ -37,25 +37,25 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user? <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src={user?.photoURL || "https://i.ibb.co/d7Ppj2d/devesh-jpg.jpg" } />
-                            </div>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
-                                <button className="btn btn-sm btn-ghost">{user?.displayName||'Unknown User'}</button>
+                        user ? <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={user?.photoURL || "https://i.ibb.co/d7Ppj2d/devesh-jpg.jpg"} />
+                                </div>
+                                
+                            </label>
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    <button className="btn btn-sm btn-ghost">{user?.displayName || 'Unknown User'}</button>
 
-                            </li>
-                            <li>
-                                <button
-                                    onClick={logoutUser}
-                                    className="btn btn-sm  btn-ghost">Logout</button>
-
-                            </li>
-                        </ul>
-                    </div>
+                                </li>
+                                <li>
+                                    <button
+                                        onClick={logoutUser}
+                                        className="btn btn-sm  btn-ghost">Logout</button>
+                                </li>
+                            </ul>
+                        </div>
                             :
                             <Link to='/login'><button className="text-red bg-blue-300 p-2 rounded-xl font-bold">Login</button></Link>
                     }

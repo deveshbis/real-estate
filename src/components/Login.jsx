@@ -1,6 +1,7 @@
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import SocialLogin from "./SocialLogin";
@@ -24,13 +25,18 @@ const Login = () => {
         const { email, password } = data;
         signInUser(email, password)
         .then(result=>{
+            toast.success("Registration successful!");
             if(result.user){
+                toast.success("Registration successful!");
                 navigate(from);
             }
-        })
+        }).catch(error => {
+            toast.error(`Failed to register: ${error.message}`);
+        });
     }
     return (
         <div>
+            <ToastContainer></ToastContainer>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">

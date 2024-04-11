@@ -1,21 +1,67 @@
 
-import useAuth from '../Hooks/useAuth'; 
+import { useState } from 'react';
+import useAuth from '../Hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const UpdateProfile = () => {
-    const { user } = useAuth(); 
+    const { user, updateUserProfile } = useAuth();
+    const [name, setName] = useState(user?.displayName || '');
+    const [imageUrl, setImageUrl] = useState(user?.photoURL || '');
+
+    
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        updateUserProfile(name, imageUrl)
+            .then(() => {
+                toast.success('Profile updated successfully!');
+            })
+            .catch(error => {
+                console.error("Error updating profile: ", error);
+                toast.error('Failed to update profile.');
+            });
+    };
+
 
     return (
-        <div className="text-center">
-            <h1 className="text-3xl font-bold underline">User Profile</h1>
-            {user && (
+        <div className="profile-update-form flex justify-center items-center">
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <img src={user.photoURL || 'https://via.placeholder.com/150'} alt="Profile" className="w-32 h-32 rounded-full mx-auto"/>
-                    <h2 className="text-xl font-semibold">{user.displayName || 'No Name'}</h2>
-                    <p>{user.email}</p>
+                    <label>Name:</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
                 </div>
-            )}
+                <div>
+                    <label>Image URL:</label>
+                    <input
+                        type="text"
+                        value={imageUrl}
+                        onChange={(e) => setImageUrl(e.target.value)}
+                    />
+                </div>
+                <button type="submit">Update Profile</button>
+            </form>
+            <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+                <img src={user?.photoURL || "https://source.unsplash.com/150x150/?portrait?3"} alt="" className="w-60 h-60 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                <div className="space-y-4 text-center divide-y dark:divide-gray-300">
+                    <div className="my-2 space-y-1">
+                        <h2 className="text-xl font-semibold sm:text-2xl">{user?.displayName || "No Name"}</h2>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
 
+
 export default UpdateProfile;
+
+
+
+
+
+
+
