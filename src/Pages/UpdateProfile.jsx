@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import useAuth from '../Hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
+import 'animate.css';
+
 
 const UpdateProfile = () => {
     const { user, updateUserProfile } = useAuth();
@@ -40,7 +42,7 @@ const UpdateProfile = () => {
             </div>
             <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 border bg-gray-50 dark:text-gray-800">
                 <div className="mb-8 text-center">
-                    <h1 className="text-4xl">Update Profile</h1>
+                    <h1 className="text-4xl animate__fadeInTopRight">Update Profile</h1>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-3">
                     <div>

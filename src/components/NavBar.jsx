@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import 'animate.css';
+
 
 
 const NavBar = () => {
@@ -26,7 +28,7 @@ const NavBar = () => {
                             }
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost text-xl text-white ">Dev s Real Estate</Link>
+                    <Link to='/' className="btn btn-ghost text-xl text-white animate__bounceInDown ">Dev s Real Estate</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1  ">

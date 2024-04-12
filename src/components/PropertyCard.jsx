@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import 'animate.css';
+
 
 const PropertyCard = ({ property }) => {
     const { id, estate_title, description, image, area, location } = property;
@@ -7,7 +9,7 @@ const PropertyCard = ({ property }) => {
         <div className="card w-96 glass">
             <figure><img src={image} alt="car!" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{estate_title}</h2>
+                <h2 className="card-title animate__fadeInLeft">{estate_title}</h2>
                 <p>{description.slice(0, 100)}</p>
                 <hr />
                 <p> <span className='font-bold'>Location: </span> {location}</p>
