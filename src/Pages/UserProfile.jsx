@@ -7,15 +7,15 @@ const UserProfile = () => {
     const { user } = useAuth();
 
     if (!user) {
-        return <div><span className="loading loading-bars loading-xs"></span>
-            <span className="loading loading-bars loading-sm"></span>
-            <span className="loading loading-bars loading-md"></span>
-            <span className="loading loading-bars loading-lg"></span></div>;
+        return <div className="flex justify-center items-center">
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
     }
+
     return (
         <div>
             <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
-                <img src={user.photoURL || "https://source.unsplash.com/150x150/?portrait?3"} alt="" className="w-60 h-60 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                <img src={user.photoURL || "https://i.ibb.co/bvsgvC7/no-images.jpg"} alt="" className="w-60 h-60 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                     <div className="my-2 space-y-1">
                         <h2 className="text-xl font-semibold sm:text-2xl">{user.displayName || "No Name"}</h2>

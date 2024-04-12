@@ -8,7 +8,7 @@ const UpdateProfile = () => {
     const [name, setName] = useState(user?.displayName || '');
     const [imageUrl, setImageUrl] = useState(user?.photoURL || '');
 
-    
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,36 +22,49 @@ const UpdateProfile = () => {
             });
     };
 
+    if (!user) {
+        return <div className="flex justify-center items-center">
+            <span className="loading loading-spinner loading-lg"></span>
+        </div>
+    }
+
 
     return (
-        <div className="profile-update-form flex justify-center items-center">
+        <div className="profile-update-form flex justify-center items-center gap-32">
             <ToastContainer></ToastContainer>
-            <form onSubmit={handleSubmit}>
+            <div className="flex flex-col max-w-md p-6 dark:bg-gray-50 dark:text-gray-800 ">
+                <img src={user?.photoURL || "https://i.ibb.co/bvsgvC7/no-images.jpg"} alt="" className="flex-shrink-0 object-cover h-64 rounded-sm sm:h-96 dark:bg-gray-500 aspect-square" />
                 <div>
-                    <label>Name:</label>
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
+                    <h2 className="text-xl font-extrabold mt-5">{user?.displayName || "No Name"}</h2>
                 </div>
-                <div>
-                    <label>Image URL:</label>
-                    <input
-                        type="text"
-                        value={imageUrl}
-                        onChange={(e) => setImageUrl(e.target.value)}
-                    />
+            </div>
+            <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 border bg-gray-50 dark:text-gray-800">
+                <div className="mb-8 text-center">
+                    <h1 className="text-4xl">Update Profile</h1>
                 </div>
-                <button type="submit">Update Profile</button>
-            </form>
-            <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
-                <img src={user?.photoURL || "https://source.unsplash.com/150x150/?portrait?3"} alt="" className="w-60 h-60 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
-                <div className="space-y-4 text-center divide-y dark:divide-gray-300">
-                    <div className="my-2 space-y-1">
-                        <h2 className="text-xl font-semibold sm:text-2xl">{user?.displayName || "No Name"}</h2>
+                <form onSubmit={handleSubmit} className="space-y-3">
+                    <div>
+                        <label className="block mb-2 text-sm">Name:</label>
+                        <input
+                            className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
                     </div>
-                </div>
+                    <div>
+                        <label className="block mb-2 text-sm">Image URL:</label>
+                        <input
+                            className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                            type="text"
+                            value={imageUrl}
+                            onChange={(e) => setImageUrl(e.target.value)} 
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-green-700 text-gray-50">Update Profile</button>
+                </form>
             </div>
         </div>
     );
