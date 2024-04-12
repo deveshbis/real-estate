@@ -13,4 +13,5 @@
 - **npm install react-hook-form**.
 - **npm install react-toastify**
 - **npm install swiper**
+- **npm install animate.css --save**
 
