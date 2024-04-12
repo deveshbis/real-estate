@@ -12,4 +12,5 @@
 - **npm i react-icons**.
 - **npm install react-hook-form**.
 - **npm install react-toastify**
+- **npm install swiper**
 
