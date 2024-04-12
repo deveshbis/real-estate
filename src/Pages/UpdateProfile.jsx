@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import useAuth from '../Hooks/useAuth';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const UpdateProfile = () => {
     const { user, updateUserProfile } = useAuth();
@@ -25,6 +25,7 @@ const UpdateProfile = () => {
 
     return (
         <div className="profile-update-form flex justify-center items-center">
+            <ToastContainer></ToastContainer>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>

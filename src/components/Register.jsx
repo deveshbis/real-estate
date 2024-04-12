@@ -4,12 +4,21 @@ import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
 
     const { createUser, updateUserProfile } = useAuth();
     const navigate = useNavigate();
     const from = '/';
+
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const {
         register,
@@ -22,7 +31,7 @@ const Register = () => {
         createUser(email, password)
             .then(() => {
                 toast.success("Registration successful!");
-                
+
                 updateUserProfile(fullName, image)
                     .then(() => {
                         toast.success("Registration successful!");
@@ -32,6 +41,7 @@ const Register = () => {
                 toast.error(`Failed to register: ${error.message}`);
             });
     };
+
 
     const passwordValidation = {
         required: "Password is required",
@@ -78,13 +88,26 @@ const Register = () => {
                                 <input type="text" placeholder="Photo Url" className="input input-bordered" {...register("image", { required: true })} />
 
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="Password" className="input input-bordered" {...register("password", passwordValidation)} />
+
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Password"
+                                    className="input input-bordered"
+                                    {...register("password", passwordValidation)}
+
+                                />
+                                <span onClick={togglePasswordVisibility} className="absolute bottom-14 right-1 pr-1 text-lg cursor-pointer">
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </span>
+
+
                                 {errors.password && <span className="text-red-500">{errors.password.message}</span>}
                                 <label >
+
                                     <Link to='/login' className="flex justify-between items-center"> Have an Account? <span className="label hover:underline">Login Now</span></Link>
                                 </label>
                             </div>
