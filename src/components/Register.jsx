@@ -10,7 +10,7 @@ import HelmetTitle from "./HelmetTitle/HelmetTitle";
 
 const Register = () => {
 
-    const { createUser, updateUserProfile } = useAuth();
+    const { createUser, updateUserProfile, setReload } = useAuth();
     const navigate = useNavigate();
     const from = '/';
 
@@ -32,12 +32,11 @@ const Register = () => {
         createUser(email, password)
             .then(() => {
                 toast.success("Registration successful!");
-                
-
                 updateUserProfile(fullName, image)
                     .then(() => {
                         toast.success("Registration successful!");
                         navigate(from, { replace: true });
+                        setReload(true)
                     })
             }).catch(error => {
                 toast.error(`Failed to register: ${error.message}`);
@@ -61,7 +60,7 @@ const Register = () => {
     return (
         <div>
             <HelmetTitle title="Register"></HelmetTitle>
-            
+
             <ToastContainer />
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">

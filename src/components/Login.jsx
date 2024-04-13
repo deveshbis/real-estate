@@ -28,9 +28,9 @@ const Login = () => {
         const { email, password } = data;
         signInUser(email, password)
         .then(result=>{
-            toast.success("Registration successful!");
+            toast.success("login successful!");
             if(result.user){
-                toast.success("Registration successful!");
+                toast.success("Login successful!");
                 navigate(from);
             }
         }).catch(error => {
