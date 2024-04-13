@@ -1,4 +1,3 @@
-
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import 'animate.css';
@@ -9,6 +8,16 @@ const NavBar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
+    };
+
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
     };
 
     const navLinks = (
@@ -40,20 +49,24 @@ const NavBar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end flex">
+            <div className="navbar-end flex items-center space-x-4">
                 {user ? (
-                    <div className="flex items-center space-x-4">
-                       <p className="hidden md:block">{user.displayName || 'Unknown User'}</p>
-
-                        <div className="dropdown dropdown-end">
-                            
+                    <div className="flex items-center space-x-4 relative">
+                        <div
+                            className="dropdown dropdown-end"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar relative">
-                                <img src={user?.photoURL || "https://i.ibb.co/d7Ppj2d/devesh-jpg.jpg"} className="w-10 rounded-full" alt="User Avatar"/>
+                                <img src={user?.photoURL || "https://i.ibb.co/d7Ppj2d/devesh-jpg.jpg"} className="w-10 rounded-full" alt="User Avatar" />
                             </label>
+                            {isHovering && (
+                                <p className="absolute top-0 left-0 transform -translate-x-full bg-black shadow-lg rounded px-2 py-1">{user.displayName || 'Unknown User'}</p>
+                            )}
                         </div>
-                        
+
                         <button onClick={logoutUser} className="btn btn-sm btn-ghost hover:bg-black">Logout</button>
-                        
+
                     </div>
                 ) : (
                     <Link to='/login'><button className="text-white bg-black p-2 rounded-xl font-bold">Login</button></Link>
@@ -64,6 +77,43 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

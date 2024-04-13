@@ -1,5 +1,6 @@
 
 import {Helmet} from "react-helmet";
+import PropTypes from 'prop-types';
 
 const HelmetTitle = ({title}) => {
     return (
@@ -9,6 +10,9 @@ const HelmetTitle = ({title}) => {
             </title>
         </Helmet>
     );
+};
+HelmetTitle.propTypes = {
+    title: PropTypes.string.isRequired
 };
 
 export default HelmetTitle;
