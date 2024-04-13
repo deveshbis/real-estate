@@ -11,6 +11,7 @@ const gitHubProvider = new GithubAuthProvider();
 const FirebaseProvider = ({ children }) => {
 
 
+    const [reload, setReload] = useState(false);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -57,14 +58,10 @@ const FirebaseProvider = ({ children }) => {
             if (user) {
                 setLoading(false)
                 setUser(user)
-                // ...
-            } else {
-                // User is signed out
-                // ...
             }
         });
         return () => unSubscribe();
-    }, [])
+    }, [reload])
 
     const allValue = {
         createUser,
@@ -74,7 +71,8 @@ const FirebaseProvider = ({ children }) => {
         logoutUser,
         updateUserProfile,
         user,
-        loading
+        loading,
+        setReload
     };
 
     return (

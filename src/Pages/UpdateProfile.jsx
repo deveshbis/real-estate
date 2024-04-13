@@ -6,7 +6,7 @@ import 'animate.css';
 
 
 const UpdateProfile = () => {
-    const { user, updateUserProfile } = useAuth();
+    const { user, updateUserProfile, setReload } = useAuth();
     const [name, setName] = useState(user?.displayName || '');
     const [imageUrl, setImageUrl] = useState(user?.photoURL || '');
 
@@ -17,6 +17,7 @@ const UpdateProfile = () => {
         updateUserProfile(name, imageUrl)
             .then(() => {
                 toast.success('Profile updated successfully!');
+                setReload(true);
             })
             .catch(error => {
                 console.error("Error updating profile: ", error);

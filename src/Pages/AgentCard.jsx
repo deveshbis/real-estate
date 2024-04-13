@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 const AgentCard = ({agent}) => {
 
     const {image, name, occupation} = agent;
+
+    
     return (
         <div>
             <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">

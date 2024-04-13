@@ -3,11 +3,18 @@ import { useLoaderData } from "react-router-dom";
 import AgentCard from "./AgentCard";
 import agentPic from '../assets/agent.webp';
 import 'animate.css';
+import useAuth from "../Hooks/useAuth";
 
 
 const Agent = () => {
 
     const agent = useLoaderData();
+    const { user } = useAuth();
+    if (!user) {
+        return <div className="flex justify-center items-center">
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    }
 
     return (
         <div>
