@@ -6,7 +6,7 @@ import 'animate.css';
 const PropertyCard = ({ property }) => {
     const { id, estate_title, description, image, area, location } = property;
     return (
-        <div className="card w-96 glass">
+        <div className="card md:w-80 lg:w-96 glass">
             <figure><img src={image} alt="car!" /></figure>
             <div className="card-body">
                 <h2 className="card-title animate__fadeInLeft">{estate_title}</h2>

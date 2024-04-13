@@ -16,7 +16,7 @@ const NavBar = () => {
     );
 
     return (
-        <div className="navbar rounded-2xl mb-3 text-white bg-green-700 gap-5">
+        <div className="navbar rounded-2xl mt-2 mb-3 text-white bg-green-700 gap-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,11 +24,11 @@ const NavBar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-white rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-white bg-black rounded-box w-52">
                         {navLinks}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl text-white animate__bounceInDown">Dev s Real Estate</Link>
+                <Link to='/' className="btn btn-ghost lg:text-2xl md:texxl text-xs text-white animate__bounceInDown">Dev s Real Estate</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

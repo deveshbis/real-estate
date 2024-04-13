@@ -19,13 +19,13 @@ const ViewProperty = () => {
         <section>
 
             <div className="mb-10">
-                <div className='flex justify-between items-center mb-8'>
+                <div className='flex justify-between lg:flex-row md:flex-row flex-col items-center mb-8'>
                     <div className="container flex flex-col px-4 space-y-3 mb-5">
                         <h1 className=" mt-2 lg:mt-4 text-xl font-bold lg:text-3xl">{property.estate_title}</h1>
                         <p className="mt-2 lg:mt-4 text-lg sm:mb-12 ">{property.description.slice(0, 100)}</p>
                         <p className='flex gap-3 mt-2 lg:mt-4 text-lg sm:mb-12'>
                             {property.facilities.map((facility, index) => (
-                                <ul key={index} className='bg-blue-800 p-2 rounded-lg text-white'>{facility}</ul>
+                                <ul key={index} className='bg-blue-800 lg:p-2 md:p-1 rounded-lg text-white'>{facility}</ul>
                             ))}
                         </p>
                     </div>

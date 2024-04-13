@@ -32,7 +32,7 @@ const UpdateProfile = () => {
 
 
     return (
-        <div className="profile-update-form flex justify-center items-center gap-32">
+        <div className="profile-update-form flex lg:flex-row md:flex-col flex-col justify-center items-center gap-32">
             <ToastContainer></ToastContainer>
             <div className="flex flex-col max-w-md p-6 dark:bg-gray-50 dark:text-gray-800 ">
                 <img src={user?.photoURL || "https://i.ibb.co/bvsgvC7/no-images.jpg"} alt="" className="flex-shrink-0 object-cover h-64 rounded-sm sm:h-96 dark:bg-gray-500 aspect-square" />
