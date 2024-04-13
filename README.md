@@ -14,4 +14,5 @@
 - **npm install react-toastify**
 - **npm install swiper**
 - **npm install animate.css --save**
+- **npm i react-helmet**
 
