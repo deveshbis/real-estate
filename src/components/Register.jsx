@@ -58,7 +58,7 @@ const Register = () => {
 
 
     return (
-        <div>
+        <div className='mt-20'>
             <HelmetTitle title="Register"></HelmetTitle>
 
             <ToastContainer />

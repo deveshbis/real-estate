@@ -35,7 +35,7 @@ const UpdateProfile = () => {
 
     return (
         
-        <div>
+        <div className='mt-20'>
             <HelmetTitle title="Update Profile"></HelmetTitle>
 
             <div className="profile-update-form flex lg:flex-row md:flex-col flex-col justify-center items-center gap-32">

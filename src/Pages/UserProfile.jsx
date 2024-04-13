@@ -14,7 +14,7 @@ const UserProfile = () => {
     }
 
     return (
-        <div>
+        <div className='mt-20'>
             <HelmetTitle title="User Profile"></HelmetTitle>
             <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
                 <img src={user.photoURL || "https://i.ibb.co/bvsgvC7/no-images.jpg"} alt="" className="w-60 h-60 mx-auto rounded-full dark:bg-gray-500 aspect-square" />

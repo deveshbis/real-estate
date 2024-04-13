@@ -38,7 +38,7 @@ const Login = () => {
         });
     }
     return (
-        <div>
+        <div className='mt-20'>
             <HelmetTitle title="Login"></HelmetTitle>
 
             <ToastContainer></ToastContainer>

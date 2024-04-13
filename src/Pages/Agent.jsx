@@ -18,7 +18,7 @@ const Agent = () => {
     }
 
     return (
-        <div>
+        <div className='mt-20'>
             <HelmetTitle title="Agent"></HelmetTitle>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
@@ -35,7 +35,7 @@ const Agent = () => {
             </div>
             <h1 className="text-3xl font-semibold text-center mb-2 mt-5 ">HERE IS OUR AGENTS</h1>
             <p className="text-center">Skilled Real Estate Agent with Extensive Market Knowledge, <br />Dedicated to Finding the Perfect Homes and Investment Opportunities for Clients</p>
-            <div className="mt-3 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2">
+            <div className="mt-3 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 ">
                 {
                     agent.map(agents => <AgentCard key={agents.id} agent={agents}></AgentCard>)
                 }

@@ -1,13 +1,15 @@
-import { Outlet  } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 
 const Roots = () => {
     return (
-        <div className="lg:px-32 md:px-12 px-5 ">
+        <div className=" font-poppins">
             <NavBar></NavBar>
-            <Outlet></Outlet>
+            <div className="">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

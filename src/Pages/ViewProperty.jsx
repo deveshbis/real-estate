@@ -17,7 +17,7 @@ const ViewProperty = () => {
 
     return (
 
-        <section>
+        <section className='mt-20 px-5'>
             <HelmetTitle title={`View Property: 0${id}`}></HelmetTitle>
 
             <div className="mb-10">
