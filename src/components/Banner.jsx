@@ -3,23 +3,20 @@ import bannerImg2 from '../assets/banner2.png'
 import bannerImg3 from '../assets/banner3.jpg'
 import bannerImg4 from '../assets/banner4.png'
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import '../components/SliderCss/style.css';
-
-// import required modules
 import { Navigation } from 'swiper/modules';
 
 
 
 const Banner = () => {
     return (
-        < >
+        <div>
             <Swiper
                 navigation={true}
                 modules={[Navigation]}
@@ -32,7 +29,7 @@ const Banner = () => {
                 <SwiperSlide><img src={bannerImg4} alt="Banner 4" className="w-full h-full object-cover" /></SwiperSlide>
             </Swiper>
 
-        </>
+        </div>
     );
 };
 

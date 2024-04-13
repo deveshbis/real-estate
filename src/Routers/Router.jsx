@@ -10,6 +10,7 @@ import UserProfile from "../Pages/UserProfile";
 import ErrorPage from "../Pages/ErrorPage";
 import ViewProperty from "../Pages/ViewProperty";
 import PrivateDetailsRoute from "../components/PrivateDetailsRouter/PrivateDetailsRoute";
+import Agent from "../Pages/Agent";
 
 
 
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
                     <ViewProperty></ViewProperty>
                 </PrivateDetailsRoute>,
 
+            },
+            {
+                path: "/agent",
+                element: <Agent></Agent>,
+                loader: () => fetch('/agent.json'),
             },
             
             {

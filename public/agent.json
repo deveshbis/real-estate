@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "occupation": "Real Estate Agent",
+      "image": "https://i.ibb.co/w03yMVB/Alice-Johnson.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "occupation": "Property Manager",
+      "image": "https://i.ibb.co/TM3bTKW/Bob-Smith.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Maria Taylor",
+      "occupation": "Real Estate Broker",
+      "image": "https://i.ibb.co/hLWpq6p/Maria-Taylor.jpg"
+    },
+    {
+      "id": 4,
+      "name": "David Brown",
+      "occupation": "Real Estate Appraiser",
+      "image": "https://i.ibb.co/zXcGzhM/David-Brown.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Eva Martinez",
+      "occupation": "Real Estate Developer",
+      "image": "https://i.ibb.co/ysQKpxt/Eva-Martinez.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Frank Wilson",
+      "occupation": "Mortgage Broker",
+      "image": "https://i.ibb.co/0sHf5Ys/Frank-Wilson.jpg"
+    }
+  ]
+  

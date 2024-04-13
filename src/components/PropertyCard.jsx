@@ -18,7 +18,7 @@ const PropertyCard = ({ property }) => {
                 <p><span className='font-bold'>Area: </span> {area}</p>
                 <hr />
                 <div className="card-actions justify-end">
-                    <Link to= {`/property/${id}`}><button className="btn bg-green-700 text-white">View Property</button></Link>
+                    <Link to= {`/property/${id}`}><button className="btn bg-green-700 text-white hover:bg-black">View Property</button></Link>
                 </div>
             </div>
         </div>
