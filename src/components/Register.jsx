@@ -6,6 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import HelmetTitle from "./HelmetTitle/HelmetTitle";
 
 const Register = () => {
 
@@ -31,6 +32,7 @@ const Register = () => {
         createUser(email, password)
             .then(() => {
                 toast.success("Registration successful!");
+                
 
                 updateUserProfile(fullName, image)
                     .then(() => {
@@ -58,6 +60,8 @@ const Register = () => {
 
     return (
         <div>
+            <HelmetTitle title="Register"></HelmetTitle>
+            
             <ToastContainer />
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">

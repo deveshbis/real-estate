@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import SocialLogin from "./SocialLogin";
+import HelmetTitle from "./HelmetTitle/HelmetTitle";
 
 
 const Login = () => {
@@ -38,6 +39,8 @@ const Login = () => {
     }
     return (
         <div>
+            <HelmetTitle title="Login"></HelmetTitle>
+
             <ToastContainer></ToastContainer>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">

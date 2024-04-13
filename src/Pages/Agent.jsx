@@ -4,6 +4,7 @@ import AgentCard from "./AgentCard";
 import agentPic from '../assets/agent.webp';
 import 'animate.css';
 import useAuth from "../Hooks/useAuth";
+import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
 
 
 const Agent = () => {
@@ -18,6 +19,7 @@ const Agent = () => {
 
     return (
         <div>
+            <HelmetTitle title="Agent"></HelmetTitle>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row-reverse ">
                     <img src={agentPic} className="max-w-sm rounded-lg shadow-2xl" />

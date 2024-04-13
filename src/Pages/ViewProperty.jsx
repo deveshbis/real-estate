@@ -1,6 +1,7 @@
 
 import { MdSell } from "react-icons/md";
 import { useLoaderData, useParams } from 'react-router-dom';
+import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
 
 const ViewProperty = () => {
     const { id } = useParams();
@@ -17,6 +18,7 @@ const ViewProperty = () => {
     return (
 
         <section>
+            <HelmetTitle title={`View Property: 0${id}`}></HelmetTitle>
 
             <div className="mb-10">
                 <div className='flex justify-between lg:flex-row md:flex-row flex-col items-center mb-8'>

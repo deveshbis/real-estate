@@ -1,5 +1,6 @@
 import { FaEnvelope, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
+import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
 
 
 const UserProfile = () => {
@@ -14,6 +15,7 @@ const UserProfile = () => {
 
     return (
         <div>
+            <HelmetTitle title="User Profile"></HelmetTitle>
             <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
                 <img src={user.photoURL || "https://i.ibb.co/bvsgvC7/no-images.jpg"} alt="" className="w-60 h-60 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">

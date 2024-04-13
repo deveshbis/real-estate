@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import { useLoaderData } from 'react-router-dom';
 import PropertyCard from "../components/PropertyCard";
+import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     
     return (
         <div>
+            <HelmetTitle title="Home"></HelmetTitle>
             <div>
                 <Banner></Banner>
             </div>
