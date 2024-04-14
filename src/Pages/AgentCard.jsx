@@ -8,7 +8,7 @@ const AgentCard = ({agent}) => {
     
     return (
         <div>
-            <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex flex-col justify-center items-center mx-auto max-w-[400px] p-6 shadow-lg rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 border border-solid border-black" data-aos="flip-left" data-aos-duration="3000">
                 <img src={image} alt="" className="w-60 h-60 mx-auto rounded-2xl dark:bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                     <div className="my-2 space-y-1">

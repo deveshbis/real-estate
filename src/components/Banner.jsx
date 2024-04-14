@@ -16,7 +16,7 @@ import { Navigation } from 'swiper/modules';
 
 const Banner = () => {
     return (
-        <div className='mt-20 px-2'>
+        <div className='mt-20 px-2' data-aos="flip-right" data-aos-duration="3000">
             <Swiper
                 navigation={true}
                 modules={[Navigation]}
