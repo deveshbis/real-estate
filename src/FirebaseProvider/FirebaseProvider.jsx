@@ -11,67 +11,74 @@ const gitHubProvider = new GithubAuthProvider();
 const FirebaseProvider = ({ children }) => {
 
 
-    const [reload, setReload] = useState(false);
+
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [reload, setReload] = useState(false);
 
 
 
     const createUser = (email, password) => {
-        setLoading(true)
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
     const updateUserProfile = (name, image) => {
         return updateProfile(auth.currentUser, {
-            displayName: name, 
+            displayName: name,
             photoURL: image
         })
     }
 
     const signInUser = (email, password) => {
-        setLoading(true)
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
 
     const googleLogin = () => {
-        setLoading(true)
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     const gitHubLogin = () => {
-        setLoading(true)
-        setUser(null);
+        setLoading(true);
         return signInWithPopup(auth, gitHubProvider)
     }
 
+
     const logoutUser = () => {
+        setLoading(true);
         setUser(null);
-        signOut(auth)
+        signOut(auth);
+        setReload(prevState => !prevState);
+
     }
 
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setLoading(false)
-                setUser(user)
+                setUser(user);
+                setLoading(false);
+            }
+            else{
+                setLoading(false); 
             }
         });
         return () => unSubscribe();
     }, [reload])
 
     const allValue = {
+        user,
+        loading,
         createUser,
         signInUser,
         googleLogin,
         gitHubLogin,
         logoutUser,
         updateUserProfile,
-        user,
-        loading,
         setReload
     };
 

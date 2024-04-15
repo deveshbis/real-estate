@@ -1,16 +1,27 @@
 import { FaEnvelope, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
 import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
+import { Navigate } from "react-router-dom";
 
 
 const UserProfile = () => {
 
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
+
+    // if (!user) {
+    //     return <div className="flex justify-center items-center mt-48 mb-48">
+    //     <span className="loading loading-ring loading-lg"></span>
+    //   </div>
+    // }
+
+    if(loading){
+        return <div className="flex justify-center items-center mt-48 mb-48">
+            <span className="loading loading-infinity loading-lg"></span>
+        </div>
+    }
 
     if (!user) {
-        return <div className="flex justify-center items-center">
-        <span className="loading loading-ring loading-lg"></span>
-      </div>
+        return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
     }
 
     return (

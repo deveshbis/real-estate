@@ -1,5 +1,5 @@
 
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData } from "react-router-dom";
 import AgentCard from "./AgentCard";
 import agentPic from '../assets/agent.webp';
 import 'animate.css';
@@ -10,11 +10,15 @@ import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
 const Agent = () => {
 
     const agent = useLoaderData();
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
+    if(loading){
+        return <div className="flex justify-center items-center mt-48 mb-48">
+            <span className="loading loading-infinity loading-lg"></span>
+        </div>
+    }
+
     if (!user) {
-        return <div className="flex justify-center items-center">
-        <span className="loading loading-ring loading-lg"></span>
-      </div>
+        return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
     }
 
     return (

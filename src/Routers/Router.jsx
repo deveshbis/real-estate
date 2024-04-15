@@ -31,7 +31,8 @@ const router = createBrowserRouter([
             {
                 path: "/property/:id",
                 loader:() => fetch('/luxury.json'),
-                element: <PrivateDetailsRoute>
+                element: 
+                <PrivateDetailsRoute>
                     <ViewProperty></ViewProperty>
                 </PrivateDetailsRoute>,
 
