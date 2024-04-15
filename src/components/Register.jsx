@@ -63,10 +63,9 @@ const Register = () => {
 
             <ToastContainer />
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Register now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -96,26 +95,27 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
 
-                                <input
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder="Password"
-                                    className="input input-bordered"
-                                    {...register("password", passwordValidation)}
-
-                                />
-                                <span onClick={togglePasswordVisibility} className="absolute bottom-14 right-1 pr-1 text-lg cursor-pointer">
-                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
-                                </span>
-
+                                <div className="relative">
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        placeholder="Password"
+                                        className="input input-bordered pr-12"
+                                        {...register("password", passwordValidation)}
+                                    />
+                                    <span onClick={togglePasswordVisibility} className="absolute inset-y-0 right-0 pr-3 flex items-center text-lg cursor-pointer">
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                    </span>
+                                </div>
 
                                 {errors.password && <span className="text-red-500">{errors.password.message}</span>}
-                                <label >
-
-                                    <Link to='/login' className="flex justify-between items-center"> Have an Account? <span className="label hover:underline">Login Now</span></Link>
+                                <label>
+                                    <Link to='/login' className="flex justify-between items-center">
+                                        Have an Account? <span className="label hover:underline text-blue-700">Login Now</span>
+                                    </Link>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Sign Up</button>
+                                <button className="btn  bg-teal-700 text-white hover:bg-black">Sign Up</button>
                             </div>
                         </form>
                     </div>

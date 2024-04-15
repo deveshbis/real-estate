@@ -20,6 +20,8 @@ const NavBar = () => {
         setIsHovering(false);
     };
 
+    
+
     const navLinks = (
         <>
             <li><NavLink to='/'>Home</NavLink></li>

@@ -27,7 +27,7 @@ const ViewProperty = () => {
                         <p className="mt-2 lg:mt-4 text-lg sm:mb-12 ">{property.description.slice(0, 100)}</p>
                         <p className='flex gap-3 mt-2 lg:mt-4 text-lg sm:mb-12' data-aos="fade-down" data-aos-duration="3000">
                             {property.facilities.map((facility, index) => (
-                                <ul key={index} className='bg-teal-700 lg:p-2 md:p-1 rounded-lg text-white'>{facility}</ul>
+                                <ul key={index} className='bg-teal-700 lg:p-2 md:p-2 p-1 rounded-lg text-white'>{facility}</ul>
                             ))}
                         </p>
                     </div>
