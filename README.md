@@ -3,7 +3,7 @@
 - [Live Site](https://dev-s-real-estate.web.app/)
 
 ### Features and Characteristics
-1. **Authentication System**: Describe the authentication options available, such as email/password, Google login, and social media login.
+1. **Authentication System**: Describe the authentication options available, such as email/password, Google login, and github login.
 
 2. **Responsive Design**: Explain how the website is optimized for various devices, including desktops, tablets, and smartphones.
 
