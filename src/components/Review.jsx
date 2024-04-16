@@ -5,14 +5,14 @@ import clientImg4 from '../assets/client4.jpg'
 
 const Review = () => {
     return (
-        <div className="md:px-10 px-3 rounded-2xl mt-5">
+        <div className="md:px-10 lg:px-3  rounded-2xl mt-5">
             <h2 className="text-center text-xl font-semibold mt-2" data-aos="fade-up" data-aos-duration="3000">Our Testomonial</h2>
             <h1 className="text-center text-4xl font-bold mt-2" data-aos="flip-up" data-aos-duration="3000">What Client Say</h1>
             <p className="text-center mt-2 mb-3" data-aos="fade-left"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500" data-aos-duration="3000">Luxurious resort offering stunning ocean views, private villas, <br />infinity pools, exclusive spa services, and gourmet dining experiences.</p>
-            <div className="carousel w-full  bg-teal-600 text-white rounded-2xl" >
-                <div id="slide1" className="carousel-item relative w-full">
+            <div className="carousel w-full border border-black border-solid rounded-2xl" >
+                <div id="item1" className="carousel-item relative w-full">
                     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4" data-aos="fade-right" data-aos-duration="3000">
@@ -36,12 +36,8 @@ const Review = () => {
                             <p>Discover opulent mansions and lavish penthouses, each embodying sophistication and luxury, offering an unparalleled lifestyle experience in prestigious neighborhoods worldwide.</p>
                         </div>
                     </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
                 </div>
-                <div id="slide2" className="carousel-item relative w-full">
+                <div id="item2" className="carousel-item relative w-full">
                     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4">
@@ -65,12 +61,8 @@ const Review = () => {
                             <p>Indulge in the epitome of sophistication and elegance, where every residence exudes opulence and offers unparalleled luxury living experiences.</p>
                         </div>
                     </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
                 </div>
-                <div id="slide3" className="carousel-item relative w-full">
+                <div id="item3" className="carousel-item relative w-full">
                     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4">
@@ -94,12 +86,8 @@ const Review = () => {
                             <p>Explore prestigious addresses and unparalleled craftsmanship, where luxury transcends expectation, creating an unparalleled lifestyle of sophistication and opulence.</p>
                         </div>
                     </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
                 </div>
-                <div id="slide4" className="carousel-item relative w-full">
+                <div id="item4" className="carousel-item relative w-full">
                     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4">
@@ -123,13 +111,16 @@ const Review = () => {
                             <p>Discover opulent estates and prestigious properties, where every detail exudes elegance, offering an unparalleled lifestyle of luxury and refinement.</p>
                         </div>
                     </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
+                    
                 </div>
             </div>
 
+            <div className="flex justify-center w-full py-2 gap-2">
+                <a href="#item1" className="btn btn-xs">1</a>
+                <a href="#item2" className="btn btn-xs">2</a>
+                <a href="#item3" className="btn btn-xs">3</a>
+                <a href="#item4" className="btn btn-xs">4</a>
+            </div>
         </div>
     );
 };

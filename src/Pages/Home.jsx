@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import PropertyCard from "../components/PropertyCard";
 import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
 import Review from "../components/Review";
+import PhotoGallery from "../components/PhotoGallery";
 
 
 const Home = () => {
@@ -25,7 +26,8 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <div className="flex items-center justify-center">
+            <PhotoGallery></PhotoGallery>
+            <div className="">
                 <Review></Review>
             </div>
         </div>
