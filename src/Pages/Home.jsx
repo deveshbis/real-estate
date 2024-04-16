@@ -2,6 +2,7 @@ import Banner from "../components/Banner";
 import { useLoaderData } from 'react-router-dom';
 import PropertyCard from "../components/PropertyCard";
 import HelmetTitle from "../components/HelmetTitle/HelmetTitle";
+import Review from "../components/Review";
 
 
 const Home = () => {
@@ -23,6 +24,9 @@ const Home = () => {
                         property.map(aProperty => <PropertyCard key={aProperty.id} property={aProperty}></PropertyCard>)
                     }
                 </div>
+            </div>
+            <div className="flex items-center justify-center">
+                <Review></Review>
             </div>
         </div>
     );

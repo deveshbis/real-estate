@@ -8,12 +8,6 @@ const UserProfile = () => {
 
     const { user, loading } = useAuth();
 
-    // if (!user) {
-    //     return <div className="flex justify-center items-center mt-48 mb-48">
-    //     <span className="loading loading-ring loading-lg"></span>
-    //   </div>
-    // }
-
     if(loading){
         return <div className="flex justify-center items-center mt-48 mb-48">
             <span className="loading loading-infinity loading-lg"></span>
